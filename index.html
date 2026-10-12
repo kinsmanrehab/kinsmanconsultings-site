@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Kinsman Consulting: healthcare operations advisory for digital health and tech-enabled care companies, led by Sean Kinsman, DPT, OCS.">
+<link rel="icon" href="brand/final/favicon.svg" type="image/svg+xml">
+<title>Kinsman Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: left-anchored editorial column; a before→after outcomes ledger is the centrepiece */
+:root {
+  --paper: #F4F6F2;
+  --ink: #16202A;
+  --muted: #56636E;
+  --rule: #D6DBD3;
+  --pine: #1C453A;
+  --logo-pine: #1C453A;
+  --logo-gold: #C27B0A;
+  --amber: #A86A12;
+  --panel: #E9EDE6;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0F151B; --ink: #E6EAE4; --muted: #9AA6AF; --rule: #26313A;
+    --pine: #86C2AE; --amber: #E3A94F; --panel: #151E26; --logo-pine: #368470; --logo-gold: #F3D49B; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0F151B; --ink: #E6EAE4; --muted: #9AA6AF; --rule: #26313A;
+  --pine: #86C2AE; --amber: #E3A94F; --panel: #151E26; --logo-pine: #368470; --logo-gold: #F3D49B; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--body); font-size: 1.0625rem; line-height: 1.6;
+  margin: 0; padding-inline: clamp(16px, 5vw, 64px);
+}
+.wrap { max-width: 72rem; margin: 0 auto; }
+a { color: var(--pine); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 2px; }
+
+header.top {
+  display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: baseline; justify-content: space-between;
+  padding-block: 28px 0;
+}
+.mark { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+.mark svg { width: 34px; height: 34px; flex: none; }
+.ki-b { fill: var(--logo-pine); }
+.ki-d { fill: var(--logo-gold); }
+.mark span span { color: var(--pine); }
+nav { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 0.95rem; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover { color: var(--ink); }
+
+.hero { padding-block: clamp(56px, 10vw, 112px) clamp(40px, 6vw, 72px); border-bottom: 1px solid var(--rule); }
+.eyebrow { font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 20px; }
+h1 {
+  font-family: var(--display); font-weight: 700; letter-spacing: -0.025em;
+  font-size: clamp(2.4rem, 6.4vw, 4.9rem); line-height: 1.02; margin: 0; max-width: 16ch; text-wrap: balance;
+}
+h1 em { font-style: normal; color: var(--pine); }
+.lede { max-width: 60ch; font-size: clamp(1.08rem, 1.6vw, 1.25rem); color: var(--muted); margin: 28px 0 0; }
+.lede strong { color: var(--ink); font-weight: 600; }
+
+section { padding-block: clamp(48px, 7vw, 88px); border-bottom: 1px solid var(--rule); }
+.sec-head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; margin-bottom: 36px; }
+h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.6rem, 3vw, 2.3rem); letter-spacing: -0.02em; line-height: 1.1; margin: 0; text-wrap: balance; }
+.sec-head p { margin: 0; color: var(--muted); max-width: 62ch; }
+
+/* Outcomes ledger */
+.ledger { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.ledger-wrap { overflow-x: auto; }
+.ledger th { font-family: var(--mono); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 0 16px 12px 0; border-bottom: 1px solid var(--ink); }
+.ledger td { padding: 18px 16px 18px 0; border-bottom: 1px solid var(--rule); vertical-align: baseline; }
+.ledger tr:hover td { background: var(--panel); }
+.m-name { font-weight: 600; min-width: 11rem; }
+.m-from { font-family: var(--mono); color: var(--muted); white-space: nowrap; }
+.m-arrow { color: var(--muted); padding-right: 16px; }
+.m-to { font-family: var(--display); font-weight: 700; font-size: 1.45rem; color: var(--amber); white-space: nowrap; letter-spacing: -0.01em; }
+.m-ctx { color: var(--muted); font-size: 0.95rem; min-width: 14rem; }
+.m-ctx b { color: var(--ink); font-weight: 600; }
+
+/* Advisory practice */
+.practice { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15.5rem), 1fr)); gap: 0; border-top: 1px solid var(--ink); }
+.area { padding: 24px 24px 28px 0; border-bottom: 1px solid var(--rule); min-width: 0; }
+.area h3 { font-family: var(--display); font-weight: 700; font-size: 1.2rem; margin: 0 0 10px; letter-spacing: -0.01em; }
+.area p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+.area .tag { display: block; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pine); margin-bottom: 14px; }
+
+/* Ventures */
+.ventures { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr)); gap: 20px; }
+.venture { background: var(--panel); border-radius: 6px; padding: 28px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.venture h3 { font-family: var(--display); font-weight: 700; font-size: 1.5rem; margin: 0; letter-spacing: -0.015em; }
+.venture p { margin: 0; color: var(--muted); }
+.status { align-self: flex-start; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--pine); border: 1px solid var(--pine); border-radius: 999px; padding: 3px 10px; }
+.fine { font-size: 0.85rem; color: var(--muted); }
+
+/* About */
+.about { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 40px; }
+.about p { margin: 0 0 16px; max-width: 62ch; }
+.creds { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--ink); }
+.creds li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding: 12px 0; border-bottom: 1px solid var(--rule); }
+.creds .k { font-weight: 600; }
+.creds .v { color: var(--muted); font-family: var(--mono); font-size: 0.85rem; }
+
+/* Contact */
+.contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 32px; align-items: start; }
+.contact .big { font-family: var(--display); font-weight: 700; font-size: clamp(1.4rem, 3.4vw, 2.1rem); letter-spacing: -0.015em; margin: 0; overflow-wrap: anywhere; }
+.copyrow { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 14px; }
+button.copy { font: 500 0.85rem var(--mono); color: var(--paper); background: var(--ink); border: 0; border-radius: 4px; padding: 8px 14px; cursor: pointer; }
+button.copy:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+.copied { font-family: var(--mono); font-size: 0.85rem; color: var(--pine); }
+
+footer { padding-block: 32px 48px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; color: var(--muted); font-size: 0.88rem; }
+
+@media (max-width: 640px) {
+  .ledger thead { display: none; }
+  .ledger, .ledger tbody, .ledger tr, .ledger td { display: block; width: 100%; }
+  .ledger tr { padding: 16px 0; border-bottom: 1px solid var(--rule); }
+  .ledger td { border: 0; padding: 2px 0; }
+  .m-arrow { display: none; }
+  .m-from::after { content: " →"; }
+  .m-name, .m-ctx { min-width: 0; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ledger td { transition: background-color .15s ease; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="#" aria-label="Kinsman Consulting, home"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="ki-b" fill-rule="evenodd" d="M60.39 58.00 L37.21 30.37 L59.93 6.00 L47.62 6.00 L27.61 27.47 L27.61 6.00 L3.61 6.00 L3.61 58.00 L27.61 58.00 L27.61 40.66 L31.02 37.00 L48.65 58.00ZM12.61 52.00 L12.61 30.00 L18.61 30.00 L18.61 52.00ZM19.80 21.01 L19.79 21.21 L19.76 21.42 L19.72 21.62 L19.68 21.82 L19.62 22.02 L19.56 22.21 L19.49 22.41 L19.40 22.60 L19.31 22.78 L19.21 22.96 L19.10 23.13 L18.98 23.30 L18.85 23.46 L18.72 23.62 L18.58 23.77 L18.43 23.91 L18.27 24.05 L18.11 24.17 L17.94 24.29 L17.76 24.40 L17.59 24.50 L17.40 24.60 L17.21 24.68 L17.02 24.75 L16.82 24.82 L16.63 24.87 L16.43 24.92 L16.22 24.95 L16.02 24.98 L15.81 24.99 L15.61 25.00 L15.40 24.99 L15.19 24.98 L14.99 24.95 L14.79 24.92 L14.59 24.87 L14.39 24.82 L14.19 24.75 L14.00 24.68 L13.81 24.60 L13.63 24.50 L13.45 24.40 L13.27 24.29 L13.10 24.17 L12.94 24.05 L12.79 23.91 L12.64 23.77 L12.49 23.62 L12.36 23.46 L12.23 23.30 L12.11 23.13 L12.00 22.96 L11.90 22.78 L11.81 22.60 L11.73 22.41 L11.65 22.21 L11.59 22.02 L11.53 21.82 L11.49 21.62 L11.45 21.42 L11.43 21.21 L11.41 21.01 L11.41 20.80 L11.41 20.59 L11.43 20.39 L11.45 20.18 L11.49 19.98 L11.53 19.78 L11.59 19.58 L11.65 19.39 L11.73 19.19 L11.81 19.00 L11.90 18.82 L12.00 18.64 L12.11 18.47 L12.23 18.30 L12.36 18.14 L12.49 17.98 L12.64 17.83 L12.79 17.69 L12.94 17.55 L13.10 17.43 L13.27 17.31 L13.45 17.20 L13.63 17.10 L13.81 17.00 L14.00 16.92 L14.19 16.85 L14.39 16.78 L14.59 16.73 L14.79 16.68 L14.99 16.65 L15.19 16.62 L15.40 16.61 L15.61 16.60 L15.81 16.61 L16.02 16.62 L16.22 16.65 L16.43 16.68 L16.63 16.73 L16.82 16.78 L17.02 16.85 L17.21 16.92 L17.40 17.00 L17.59 17.10 L17.76 17.20 L17.94 17.31 L18.11 17.43 L18.27 17.55 L18.43 17.69 L18.58 17.83 L18.72 17.98 L18.85 18.14 L18.98 18.30 L19.10 18.47 L19.21 18.64 L19.31 18.82 L19.40 19.00 L19.49 19.19 L19.56 19.39 L19.62 19.58 L19.68 19.78 L19.72 19.98 L19.76 20.18 L19.79 20.39 L19.80 20.59 L19.81 20.80Z"/><circle class="ki-d" cx="15.61" cy="20.80" r="4.20"/></svg><span>Kinsman <span>Consulting</span></span></a>
+    <nav aria-label="Sections">
+      <a href="#outcomes">Outcomes</a>
+      <a href="#advisory">Advisory</a>
+      <a href="#ventures">Ventures</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <p class="eyebrow">Healthcare operations advisory · Boston, MA</p>
+    <h1>Care usually works. <em>The system around it</em> is what fails.</h1>
+    <p class="lede">Kinsman Consulting helps digital health and tech-enabled care companies build the operation behind the care: delivery, staffing, revenue cycle, quality systems and the payer evidence that wins contracts. Led by <strong>Sean Kinsman, DPT, OCS</strong>, a board-certified orthopaedic physical therapist who has run national care delivery from employee #12 to 30,000 patients a year.</p>
+  </div>
+
+  <section id="outcomes" aria-labelledby="outcomes-h">
+    <div class="sec-head">
+      <h2 id="outcomes-h">Outcomes, before and after</h2>
+      <p>Results from operating roles at digital MSK, stroke navigation and value-based care companies.</p>
+    </div>
+    <div class="ledger-wrap">
+      <table class="ledger">
+        <thead><tr><th scope="col">Measure</th><th scope="col">Before</th><th scope="col" aria-label="to"></th><th scope="col">After</th><th scope="col">Context</th></tr></thead>
+        <tbody>
+          <tr><td class="m-name">Time to first visit</td><td class="m-from">16 days</td><td class="m-arrow" aria-hidden="true">→</td><td class="m-to">72 hours</td><td class="m-ctx"><b>Protera Health.</b> Held through a 30% volume surge by rebuilding SOPs and predictive staffing.</td></tr>
+          <tr><td class="m-name">Enrollment conversion</td><td class="m-from">14%</td><td class="m-arrow" aria-hidden="true">→</td><td class="m-to">55%</td><td class="m-ctx"><b>Kandu.</b> In three months, by moving qualification to the bedside and pulling clinical data from Epic and HIEs.</td></tr>
+          <tr><td class="m-name">Gross margin</td><td class="m-from">30%</td><td class="m-arrow" aria-hidden="true">→</td><td class="m-to">55%</td><td class="m-ctx"><b>RecoveryOne.</b> Then held at 55% on a $10M delivery P&amp;L.</td></tr>
+          <tr><td class="m-name">Members served</td><td class="m-from">1,000</td><td class="m-arrow" aria-hidden="true">→</td><td class="m-to">5,000</td><td class="m-ctx"><b>Protera Health.</b> Fivefold growth with a team of 32.</td></tr>
+          <tr><td class="m-name">Provider network</td><td class="m-from">0</td><td class="m-arrow" aria-hidden="true">→</td><td class="m-to">150 providers</td><td class="m-ctx"><b>RecoveryOne.</b> Recruited, credentialed and licensed in all 50 states in six months.</td></tr>
+          <tr><td class="m-name">Claims collections</td><td class="m-from">$0</td><td class="m-arrow" aria-hidden="true">→</td><td class="m-to">$2M</td><td class="m-ctx"><b>Kandu.</b> First year of a revenue cycle function built from scratch.</td></tr>
+          <tr><td class="m-name">Payer savings evidence</td><td class="m-from">none</td><td class="m-arrow" aria-hidden="true">→</td><td class="m-to">$53 PMPM</td><td class="m-ctx"><b>RecoveryOne.</b> 24-month, Wakely-validated claims analysis for engaged members.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="advisory" aria-labelledby="advisory-h">
+    <div class="sec-head">
+      <h2 id="advisory-h">Where I help</h2>
+      <p>Engagements centre on taking companies into regulated, payer-funded care.</p>
+    </div>
+    <div class="practice">
+      <div class="area"><span class="tag">Value-based care</span><h3>Payer and CMS readiness</h3><p>Actuarial ROI evidence, payer contracting, and operating plans for CMS Innovation Center models and remote therapeutic monitoring.</p></div>
+      <div class="area"><span class="tag">Clinical operations</span><h3>Delivery at scale</h3><p>Capacity and staffing models, contracted clinician panels across 50 states, access times and enrollment conversion.</p></div>
+      <div class="area"><span class="tag">Quality &amp; regulatory</span><h3>Quality systems</h3><p>FDA quality management systems, clinical governance and launch plans for patient-facing software.</p></div>
+      <div class="area"><span class="tag">AI in operations</span><h3>Automation that holds up</h3><p>LLM tools, claims automation and reporting layers built into the workflow, with clinicians kept in the loop.</p></div>
+    </div>
+  </section>
+
+  <section id="ventures" aria-labelledby="ventures-h">
+    <div class="sec-head">
+      <h2 id="ventures-h">Ventures</h2>
+      <p>Products built in-house where the operating problems keep repeating.</p>
+    </div>
+    <div class="ventures">
+      <article class="venture">
+        <span class="status">Live</span>
+        <h3>Paperwell</h3>
+        <p>A private PDF editor for iPhone, iPad and Mac. Edit, fill, sign and redact with everything running on the device: no uploads, no accounts.</p>
+        <p class="fine"><a href="https://getpaperwell.com">getpaperwell.com</a></p>
+      </article>
+      <article class="venture">
+        <span class="status">Waitlist</span>
+        <h3>Fair Take</h3>
+        <p>Honest interview debriefs for Mac. It records and transcribes your video interviews on your own computer, then scores every answer with the evidence and the fix, after the call and never during it.</p>
+        <p class="fine"><a href="https://getpaperwell.com/fairtake/">getpaperwell.com/fairtake</a></p>
+      </article>
+      <article class="venture">
+        <span class="status">In development</span>
+        <h3>Lissom</h3>
+        <p>A physical therapy support assistant built for value-based MSK programmes. It answers only from verified PT evidence, screens for red-flag symptoms, and keeps a licensed physical therapist reviewing what patients see.</p>
+        <p class="fine">Not yet available to patients.</p>
+      </article>
+      <article class="venture">
+        <span class="status">In development</span>
+        <h3>Bench</h3>
+        <p>An AI-assisted talent studio that does the research and drafting for hiring, with every outreach message approved by a person before it goes out.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-h">
+    <div class="about">
+      <div>
+        <h2 id="about-h" style="margin-bottom:20px">About Sean</h2>
+        <p>Sean joined RecoveryOne as employee #12 and was promoted twice, to EVP Operations and Chief Clinical Officer, leading 250 people across care delivery, clinical product, evidence and quality through Series B and C. He later built the revenue cycle at Kandu and rebuilt access at Protera Health. Today he advises Tonal on its healthcare launch, alongside other digital health companies.</p>
+        <p>He started as a clinician and runs operations like one: find what is failing patients, fix the system, and measure it.</p>
+      </div>
+      <ul class="creds">
+        <li><span class="k">Doctor of Physical Therapy</span><span class="v">Northeastern University</span></li>
+        <li><span class="k">Board-certified, orthopaedics (OCS)</span><span class="v">ABPTS</span></li>
+        <li><span class="k">Executive MBA</span><span class="v">Quantic</span></li>
+        <li><span class="k">ROI Analyses for MSK Care Management</span><span class="v">Wakely, 2023</span></li>
+        <li><span class="k">Speaker</span><span class="v">ACRM · NCQA Digital Health</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="contact">
+      <div>
+        <h2 id="contact-h">Start a conversation</h2>
+        <p style="color:var(--muted);max-width:52ch;margin:12px 0 0">For advisory engagements, fractional operating work and executive roles.</p>
+      </div>
+      <div>
+        <p class="big" id="email">sean@kinsmanconsultings.com</p>
+        <div class="copyrow">
+          <button class="copy" id="copy-email" type="button">Copy email</button>
+          <span class="copied" id="copied" hidden>Copied</span>
+          <a href="https://www.linkedin.com/in/sean-kinsman">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Kinsman Consulting · Boston, MA</span>
+    <span>Healthcare operations advisory</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-email');
+  var note = document.getElementById('copied');
+  var addr = document.getElementById('email');
+  btn.addEventListener('click', function () {
+    var text = addr.textContent.trim();
+    function selectIt() {
+      var r = document.createRange(); r.selectNodeContents(addr);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () {
+        note.hidden = false; setTimeout(function () { note.hidden = true; }, 1800);
+      }, selectIt);
+    } catch (e) { selectIt(); }
+  });
+})();
+</script>
+</body>
+</html>
