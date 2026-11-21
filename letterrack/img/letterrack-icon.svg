@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024" role="img" aria-labelledby="t">
+  <title id="t">Letter Rack icon, direction C "Ruled r" (draft, 18 Nov 2026)</title>
+  <!-- Draft. The r is drawn as shapes (no font needed). A designer should redraw it from Source Serif 4's r before shipping. -->
+  <!-- Palette: paper #F5F0E6 (look E), ink #2B261F, amber #A86A12; pine #1C453A only in the lockup. -->
+  <rect width="1024" height="1024" rx="228" fill="#F5F0E6"/>
+  <g fill="#2B261F" transform="translate(-14 0)">
+    <!-- stem -->
+    <rect x="404" y="306" width="104" height="400"/>
+    <!-- head serif (left flag) -->
+    <path d="M318 330 L508 286 L508 352 L318 370 Z"/>
+    <!-- foot serif -->
+    <rect x="318" y="672" width="300" height="46" rx="6"/>
+    <!-- shoulder and arm -->
+    <path d="M508 420 C536 336 600 290 682 290 C706 290 724 294 738 300 L722 372 C706 366 690 364 674 364 C616 364 560 404 508 492 Z"/>
+    <!-- ball terminal -->
+    <circle cx="700" cy="364" r="58"/>
+  </g>
+  <!-- the double rule: a bookkeeper's mark under a checked total -->
+  <rect x="288" y="770" width="448" height="30" rx="4" fill="#A86A12"/>
+  <rect x="288" y="824" width="448" height="30" rx="4" fill="#A86A12"/>
+</svg>
